@@ -1,12 +1,12 @@
 <?php
 
-namespace TDF\ExpertSenderApi\Services;
+namespace ExpertSenderFr\ExpertSenderApi\Services;
 
 use DateTime;
 use Symfony\Component\DomCrawler\Crawler;
-use TDF\ExpertSenderApi\ApiResponse;
-use TDF\ExpertSenderApi\Model\Message;
-use TDF\ExpertSenderApi\Model\NewsletterCreationPayload;
+use ExpertSenderFr\ExpertSenderApi\ApiResponse;
+use ExpertSenderFr\ExpertSenderApi\Model\Message;
+use ExpertSenderFr\ExpertSenderApi\Model\NewsletterCreationPayload;
 
 class Messages extends ApiService
 {

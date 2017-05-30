@@ -1,9 +1,9 @@
 <?php
 
-namespace TDF\ExpertSenderApi\Test;
+namespace ExpertSenderFr\ExpertSenderApi\Test;
 
-use TDF\ExpertSenderApi\ApiRequest;
-use TDF\ExpertSenderApi\ExpertSenderClient;
+use ExpertSenderFr\ExpertSenderApi\ApiRequest;
+use ExpertSenderFr\ExpertSenderApi\ExpertSenderClient;
 
 class TestClient extends ExpertSenderClient
 {

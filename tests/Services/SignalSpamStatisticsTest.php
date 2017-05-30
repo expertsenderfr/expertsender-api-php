@@ -1,11 +1,11 @@
 <?php
 
-namespace TDF\ExpertSenderApi\Tests\Services;
+namespace ExpertSenderFr\ExpertSenderApi\Tests\Services;
 
 use PHPUnit\Framework\TestCase;
-use TDF\ExpertSenderApi\ExpertSenderClient;
-use TDF\ExpertSenderApi\Model\Message;
-use TDF\ExpertSenderApi\Model\NewsletterCreationPayload;
+use ExpertSenderFr\ExpertSenderApi\ExpertSenderClient;
+use ExpertSenderFr\ExpertSenderApi\Model\Message;
+use ExpertSenderFr\ExpertSenderApi\Model\NewsletterCreationPayload;
 
 class SignalSpamStatisticsTest extends TestCase
 {
@@ -90,7 +90,7 @@ class SignalSpamStatisticsTest extends TestCase
     }
 
     /**
-     * @expectedException \TDF\ExpertSenderApi\NoRecipientsException
+     * @expectedException \ExpertSenderFr\ExpertSenderApi\NoRecipientsException
      */
     public function testCreateNewsletterThrowsExceptionWhenNoRecipientIsSet()
     {

@@ -1,7 +1,8 @@
 <?php
 
-namespace TDF\ExpertSenderApi;
+namespace ExpertSenderFr\ExpertSenderApi\Tests;
 
+use ExpertSenderFr\ExpertSenderApi\SerializerFactory;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 

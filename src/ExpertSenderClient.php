@@ -1,13 +1,13 @@
 <?php
 
-namespace TDF\ExpertSenderApi;
+namespace ExpertSenderFr\ExpertSenderApi;
 
-use TDF\ExpertSenderApi\Model\Template;
-use TDF\ExpertSenderApi\Services\Messages;
-use TDF\ExpertSenderApi\Services\Segmentations;
-use TDF\ExpertSenderApi\Services\Server;
-use TDF\ExpertSenderApi\Services\SignalSpamStatistics;
-use TDF\ExpertSenderApi\Services\Templates;
+use ExpertSenderFr\ExpertSenderApi\Model\Template;
+use ExpertSenderFr\ExpertSenderApi\Services\Messages;
+use ExpertSenderFr\ExpertSenderApi\Services\Segmentations;
+use ExpertSenderFr\ExpertSenderApi\Services\Server;
+use ExpertSenderFr\ExpertSenderApi\Services\SignalSpamStatistics;
+use ExpertSenderFr\ExpertSenderApi\Services\Templates;
 
 /**
  * Class ExpertSenderClient

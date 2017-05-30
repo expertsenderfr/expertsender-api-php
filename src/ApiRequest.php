@@ -1,6 +1,6 @@
 <?php
 
-namespace TDF\ExpertSenderApi;
+namespace ExpertSenderFr\ExpertSenderApi;
 
 class ApiRequest
 {

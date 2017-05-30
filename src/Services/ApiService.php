@@ -1,12 +1,12 @@
 <?php
 
-namespace TDF\ExpertSenderApi\Services;
+namespace ExpertSenderFr\ExpertSenderApi\Services;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use TDF\ExpertSenderApi\ApiRequest;
-use TDF\ExpertSenderApi\ApiResponse;
-use TDF\ExpertSenderApi\ExpertSenderClient;
-use TDF\ExpertSenderApi\SerializerFactory;
+use ExpertSenderFr\ExpertSenderApi\ApiRequest;
+use ExpertSenderFr\ExpertSenderApi\ApiResponse;
+use ExpertSenderFr\ExpertSenderApi\ExpertSenderClient;
+use ExpertSenderFr\ExpertSenderApi\SerializerFactory;
 
 abstract class ApiService
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace TDF\ExpertSenderApi\Services;
+namespace ExpertSenderFr\ExpertSenderApi\Services;
 
 use DateTime;
 use DateTimeImmutable;

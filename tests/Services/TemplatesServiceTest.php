@@ -1,15 +1,15 @@
 <?php
 
-namespace TDF\ExpertSenderApi\Tests\Services;
+namespace ExpertSenderFr\ExpertSenderApi\Tests\Services;
 
 use PHPUnit\Framework\TestCase;
-use TDF\ExpertSenderApi\ApiResponse;
-use TDF\ExpertSenderApi\ExpertSenderClient;
-use TDF\ExpertSenderApi\Model\Template;
-use TDF\ExpertSenderApi\Services\ApiService;
-use TDF\ExpertSenderApi\Services\Templates;
-use TDF\ExpertSenderApi\Test\FakeApiRequest;
-use TDF\ExpertSenderApi\Tests\TestClient;
+use ExpertSenderFr\ExpertSenderApi\ApiResponse;
+use ExpertSenderFr\ExpertSenderApi\ExpertSenderClient;
+use ExpertSenderFr\ExpertSenderApi\Model\Template;
+use ExpertSenderFr\ExpertSenderApi\Services\ApiService;
+use ExpertSenderFr\ExpertSenderApi\Services\Templates;
+use ExpertSenderFr\ExpertSenderApi\Test\FakeApiRequest;
+use ExpertSenderFr\ExpertSenderApi\Tests\TestClient;
 
 class TemplatesServiceTest extends TestCase
 {

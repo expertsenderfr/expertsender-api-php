@@ -1,9 +1,9 @@
 <?php
 
-namespace TDF\ExpertSenderApi\Services;
+namespace ExpertSenderFr\ExpertSenderApi\Services;
 
 use Symfony\Component\DomCrawler\Crawler;
-use TDF\ExpertSenderApi\Model\Template;
+use ExpertSenderFr\ExpertSenderApi\Model\Template;
 
 class Templates extends ApiService
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace TDF\ExpertSenderApi;
+namespace ExpertSenderFr\ExpertSenderApi;
 
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;

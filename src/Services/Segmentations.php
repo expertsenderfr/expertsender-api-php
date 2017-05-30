@@ -1,10 +1,10 @@
 <?php
 
-namespace TDF\ExpertSenderApi\Services;
+namespace ExpertSenderFr\ExpertSenderApi\Services;
 
-use TDF\ExpertSenderApi\ApiResponse;
+use ExpertSenderFr\ExpertSenderApi\ApiResponse;
 use Symfony\Component\DomCrawler\Crawler;
-use TDF\ExpertSenderApi\Model\Segment;
+use ExpertSenderFr\ExpertSenderApi\Model\Segment;
 
 class Segmentations extends ApiService
 {

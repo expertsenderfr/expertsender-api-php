@@ -1,8 +1,8 @@
 <?php
 
-namespace TDF\ExpertSenderApi\Model;
+namespace ExpertSenderFr\ExpertSenderApi\Model;
 
-use TDF\ExpertSenderApi\NoRecipientsException;
+use ExpertSenderFr\ExpertSenderApi\NoRecipientsException;
 
 class NewsletterCreationPayload
 {

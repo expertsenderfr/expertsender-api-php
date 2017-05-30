@@ -10,12 +10,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "TDF\\ExpertSenderApi\\": "src/"
+      "ExpertSenderFr\\ExpertSenderApi\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "TDF\\ExpertSenderApi\\Tests\\": "tests/"
+      "ExpertSenderFr\\ExpertSenderApi\\Tests\\": "tests/"
     }
   },
   "require": {

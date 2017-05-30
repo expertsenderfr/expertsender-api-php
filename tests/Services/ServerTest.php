@@ -1,14 +1,14 @@
 <?php
 
-namespace TDF\ExpertSenderApi\Tests\Services;
+namespace ExpertSenderFr\ExpertSenderApi\Tests\Services;
 
 use DateTime;
 use DateTimeImmutable;
 use PHPUnit_Framework_MockObject_MockObject;
-use TDF\ExpertSenderApi\ApiRequest;
-use TDF\ExpertSenderApi\ApiResponse;
-use TDF\ExpertSenderApi\ExpertSenderClient;
-use TDF\ExpertSenderApi\Services\Server;
+use ExpertSenderFr\ExpertSenderApi\ApiRequest;
+use ExpertSenderFr\ExpertSenderApi\ApiResponse;
+use ExpertSenderFr\ExpertSenderApi\ExpertSenderClient;
+use ExpertSenderFr\ExpertSenderApi\Services\Server;
 use PHPUnit\Framework\TestCase;
 
 class ServerTest extends TestCase

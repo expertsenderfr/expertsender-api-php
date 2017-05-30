@@ -1,6 +1,6 @@
 <?php
 
-namespace TDF\ExpertSenderApi\Services;
+namespace ExpertSenderFr\ExpertSenderApi\Services;
 
 class Subscribers extends ApiService
 {

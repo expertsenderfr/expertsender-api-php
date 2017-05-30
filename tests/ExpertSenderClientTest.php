@@ -1,14 +1,14 @@
 <?php
 
-namespace TDF\ExpertSenderApi\Tests;
+namespace ExpertSenderFr\ExpertSenderApi\Tests;
 
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
-use TDF\ExpertSenderApi\ApiRequest;
-use TDF\ExpertSenderApi\ApiResponse;
-use TDF\ExpertSenderApi\ExpertSenderClient;
-use TDF\ExpertSenderApi\Services\Messages;
-use TDF\ExpertSenderApi\Services\SignalSpamStatistics;
+use ExpertSenderFr\ExpertSenderApi\ApiRequest;
+use ExpertSenderFr\ExpertSenderApi\ApiResponse;
+use ExpertSenderFr\ExpertSenderApi\ExpertSenderClient;
+use ExpertSenderFr\ExpertSenderApi\Services\Messages;
+use ExpertSenderFr\ExpertSenderApi\Services\SignalSpamStatistics;
 
 class ExpertSenderClientTest extends TestCase
 {

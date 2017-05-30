@@ -1,14 +1,14 @@
 <?php
 
-namespace TDF\ExpertSenderApi\Tests\Services;
+namespace ExpertSenderFr\ExpertSenderApi\Tests\Services;
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockObject;
 use Psr\Log\LoggerInterface;
-use TDF\ExpertSenderApi\ApiRequest;
-use TDF\ExpertSenderApi\ApiResponse;
-use TDF\ExpertSenderApi\ExpertSenderClient;
-use TDF\ExpertSenderApi\Services\ApiService;
+use ExpertSenderFr\ExpertSenderApi\ApiRequest;
+use ExpertSenderFr\ExpertSenderApi\ApiResponse;
+use ExpertSenderFr\ExpertSenderApi\ExpertSenderClient;
+use ExpertSenderFr\ExpertSenderApi\Services\ApiService;
 
 class ApiServiceTest extends TestCase
 {

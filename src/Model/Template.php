@@ -1,6 +1,6 @@
 <?php
 
-namespace TDF\ExpertSenderApi\Model;
+namespace ExpertSenderFr\ExpertSenderApi\Model;
 
 class Template
 {
