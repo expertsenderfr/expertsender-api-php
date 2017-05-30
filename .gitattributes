@@ -1,0 +1,22 @@
+* text=auto eol=lf
+
+*.txt   text eol=lf whitespace=blank-at-eol,tab-in-indent,-space-before-tab,tabwidth=4
+*.sh    text eol=lf whitespace=blank-at-eol,tab-in-indent,-space-before-tab,tabwidth=4
+*.sql   text eol=lf whitespace=blank-at-eol,tab-in-indent,-space-before-tab,tabwidth=4
+*.lock  text eol=lf whitespace=blank-at-eol,tab-in-indent,-space-before-tab,tabwidth=4
+*.php   text eol=lf whitespace=blank-at-eol,tab-in-indent,-space-before-tab,tabwidth=4
+*.yml   text eol=lf whitespace=blank-at-eol,tab-in-indent,-space-before-tab,tabwidth=4
+*.xml   text eol=lf whitespace=blank-at-eol,tab-in-indent,-space-before-tab,tabwidth=4
+*.xlf   text eol=lf whitespace=blank-at-eol,tab-in-indent,-space-before-tab,tabwidth=4
+*.html  text eol=lf whitespace=blank-at-eol,tab-in-indent,-space-before-tab,tabwidth=4
+*.twig  text eol=lf whitespace=blank-at-eol,tab-in-indent,-space-before-tab,tabwidth=4
+*.css   text eol=lf whitespace=blank-at-eol,tab-in-indent,-space-before-tab,tabwidth=4
+*.js    text eol=lf whitespace=blank-at-eol,tab-in-indent,-space-before-tab,tabwidth=4
+*.json  text eol=lf whitespace=blank-at-eol,tab-in-indent,-space-before-tab,tabwidth=4
+
+*.gif      -text diff
+*.jpg      -text diff
+*.png      -text diff
+*.ico      -text diff
+*.phar     -text diff
+*.ttf      -text diff
