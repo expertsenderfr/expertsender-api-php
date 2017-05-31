@@ -7,12 +7,11 @@ use ExpertSenderFr\ExpertSenderApi\Services\Messages;
 use ExpertSenderFr\ExpertSenderApi\Services\Segmentations;
 use ExpertSenderFr\ExpertSenderApi\Services\Server;
 use ExpertSenderFr\ExpertSenderApi\Services\SignalSpamStatistics;
+use ExpertSenderFr\ExpertSenderApi\Services\Subscribers;
 use ExpertSenderFr\ExpertSenderApi\Services\Templates;
 
 /**
  * Class ExpertSenderClient
- *
- * @author Isaac Rozas García <isaac.rozgar@gmail.com>
  */
 class ExpertSenderClient
 {
@@ -131,5 +130,13 @@ class ExpertSenderClient
     public function server()
     {
         return new Server($this, $this->domain);
+    }
+
+    /**
+     * @return Subscribers
+     */
+    public function subscribers()
+    {
+        return new Subscribers($this, $this->domain);
     }
 }

@@ -7,8 +7,6 @@ use Symfony\Component\DomCrawler\Crawler;
 
 /**
  * Class ApiResponse
- *
- * @author Isaac Rozas García <isaac.rozgar@gmail.com>
  */
 class ApiResponse
 {

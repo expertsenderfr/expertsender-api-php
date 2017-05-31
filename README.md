@@ -16,3 +16,8 @@ Installation instruction
 
 2. Add the package to your dependencies by running
 `composer require tdf/expertsender-api-php`
+
+Services documentation
+----------------------
+
+- [Subscribers](docs/services/subscribers.md): Service used to add, update or remove subscribers to a list

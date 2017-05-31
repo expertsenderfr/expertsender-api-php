@@ -4,8 +4,6 @@ namespace ExpertSenderFr\ExpertSenderApi\Model;
 
 /**
  * Class SignalSpamReport
- *
- * @author Isaac Rozas García <isaac.rozgar@gmail.com>
  */
 class SignalSpamReport
 {

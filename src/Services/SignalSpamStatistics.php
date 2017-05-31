@@ -14,8 +14,6 @@ use ExpertSenderFr\ExpertSenderApi\Model\SignalSpamReport;
 
 /**
  * Class SignalSpamStatistics
- *
- * @author Isaac Rozas García <isaac.rozgar@gmail.com>
  */
 class SignalSpamStatistics extends ApiService
 {
