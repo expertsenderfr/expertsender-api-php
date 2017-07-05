@@ -3,6 +3,7 @@
 namespace ExpertSenderFr\ExpertSenderApi;
 
 use ExpertSenderFr\ExpertSenderApi\Model\Template;
+use ExpertSenderFr\ExpertSenderApi\Services\Lists;
 use ExpertSenderFr\ExpertSenderApi\Services\Messages;
 use ExpertSenderFr\ExpertSenderApi\Services\Segmentations;
 use ExpertSenderFr\ExpertSenderApi\Services\Server;
@@ -138,5 +139,13 @@ class ExpertSenderClient
     public function subscribers()
     {
         return new Subscribers($this, $this->domain);
+    }
+
+    /**
+     * @return Lists
+     */
+    public function lists()
+    {
+        return new Lists($this, $this->domain);
     }
 }
