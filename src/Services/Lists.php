@@ -12,8 +12,8 @@ class Lists extends ApiService
 
     public function get($type, array $opts)
     {
-        $response = $this->doAll(['seedLists' => $type === 'bat'], $opts);
-
+        $parameters = $type === 'bat' ? ['seedLists' => 'true'] : [];
+        $response = $this->doAll($parameters, $opts);
 
         $lists = [];
 
