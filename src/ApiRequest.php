@@ -82,6 +82,10 @@ class ApiRequest
             curl_setopt($handler, CURLOPT_SSL_VERIFYHOST, false);
         }
 
+        curl_setopt($handler, CURLOPT_HTTPHEADER, [
+            'Content-Type: text/xml;charset=UTF-8'
+        ]);
+
         curl_setopt($handler, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($handler, CURLOPT_HEADER, false);
         // Headers will be stored in the headers variable
