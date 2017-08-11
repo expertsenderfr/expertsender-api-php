@@ -87,7 +87,7 @@ abstract class ApiService
         $opts = $optionsResolver->resolve($opts);
 
         $parametersResolver = new OptionsResolver();
-        $this->configureAllParameters($parametersResolver);
+        $this->configureGetParameters($parametersResolver);
         $this->configureCommonParameters($parametersResolver, $opts);
         $parameters = $parametersResolver->resolve($parameters);
 

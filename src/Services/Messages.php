@@ -7,6 +7,7 @@ use Symfony\Component\DomCrawler\Crawler;
 use ExpertSenderFr\ExpertSenderApi\ApiResponse;
 use ExpertSenderFr\ExpertSenderApi\Model\Message;
 use ExpertSenderFr\ExpertSenderApi\Model\NewsletterCreationPayload;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class Messages extends ApiService
 {
@@ -57,9 +58,9 @@ class Messages extends ApiService
         return $this->parseGetResponse($response);
     }
 
-    public function getAll(array $opts = [])
+    public function getAll(array $parameters, array $opts = [])
     {
-        $response = $this->doAll([], $opts);
+        $response = $this->doAll($parameters, $opts);
         $crawler = $response->getCrawler();
 
         $result = [];
@@ -207,6 +208,29 @@ class Messages extends ApiService
         $response = $this->doDelete($messageId, [], $opts);
 
         return $response->getStatusCode() === 204;
+    }
+
+    protected function configureAllParameters(OptionsResolver $resolver, array $opts = [])
+    {
+        $resolver->setDefined([
+            'startDate',
+            'endDate',
+            'tag',
+            'type'
+        ]);
+
+        $resolver->setAllowedValues('type', [
+            'Newsletter',
+            'Autoresponder',
+            'Trigger',
+            'Transactional',
+            'Confirmation',
+            'Recurring',
+            'Test',
+            'FreeEmailPreview',
+            'PaidEmailPreview',
+            'WorkflowMessage'
+        ]);
     }
 
     protected function getServiceUrl()
