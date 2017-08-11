@@ -65,13 +65,18 @@ class Messages extends ApiService
 
         $result = [];
         $crawler->filterXPath('//Messages/Message')->each(function (Crawler $node, $i) use (&$result) {
-            $item = [
-                'externalId' => (int)$node->filterXPath('//Id')->text(),
-                'type' => $node->filterXPath('//Type')->text()
-            ];
+            try {
+                $item = [
+                    'externalId' => (int)$node->filterXPath('//Id')->text(),
+                    'type' => $node->filterXPath('//Type')->text()
+                ];
 
-            if ($item['type'] === 'Newsletter') {
-                $item['sentDate'] = $node->filterXPath('//SentDate')->text();
+                if ($item['type'] === 'Newsletter') {
+                    $item['sentDate'] = $node->filterXPath('//SentDate')->text();
+                }
+            } catch (\Exception $e) {
+                $this->logger->error($e->getMessage(), ['html' => $node->html()]);
+                return;
             }
 
             $result[] = $item;
