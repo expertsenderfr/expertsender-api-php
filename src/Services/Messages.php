@@ -59,15 +59,21 @@ class Messages extends ApiService
 
     public function getAll(array $opts = [])
     {
-        $response = $this->doGet('', [], $opts);
+        $response = $this->doAll([], $opts);
         $crawler = $response->getCrawler();
 
         $result = [];
-        $crawler->filterXPath('//Message')->each(function (Crawler $node, $i) use (&$result) {
-            $result[] = [
-                'externalId' => $node->filterXPath('//Id')->text(),
-                'sentDate' => $node->filterXPath('//SentDate')->text(),
+        $crawler->filterXPath('//Messages/Message')->each(function (Crawler $node, $i) use (&$result) {
+            $item = [
+                'externalId' => (int)$node->filterXPath('//Id')->text(),
+                'type' => $node->filterXPath('//Type')->text()
             ];
+
+            if ($item['type'] === 'Newsletter') {
+                $item['sentDate'] = $node->filterXPath('//SentDate')->text();
+            }
+
+            $result[] = $item;
         });
 
         return $result;
