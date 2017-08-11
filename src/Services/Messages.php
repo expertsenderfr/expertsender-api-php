@@ -57,6 +57,22 @@ class Messages extends ApiService
         return $this->parseGetResponse($response);
     }
 
+    public function getAll(array $opts = [])
+    {
+        $response = $this->doGet('', [], $opts);
+        $crawler = $response->getCrawler();
+
+        $result = [];
+        $crawler->filterXPath('//Message')->each(function (Crawler $node, $i) use (&$result) {
+            $result[] = [
+                'externalId' => $node->filterXPath('//Id')->text(),
+                'sentDate' => $node->filterXPath('//SentDate')->text(),
+            ];
+        });
+
+        return $result;
+    }
+
     private function parseGetResponse(ApiResponse $response)
     {
         $crawler = $response->getCrawler();
