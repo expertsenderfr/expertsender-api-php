@@ -68,7 +68,8 @@ class Messages extends ApiService
             try {
                 $item = [
                     'id' => (int)$node->filterXPath('//Id')->text(),
-                    'type' => $node->filterXPath('//Type')->text()
+                    'type' => $node->filterXPath('//Type')->text(),
+                    'subject' => $node->filterXPath('//Subject')->text()
                 ];
 
                 if ($item['type'] === 'Newsletter') {
