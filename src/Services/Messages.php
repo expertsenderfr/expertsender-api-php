@@ -67,7 +67,7 @@ class Messages extends ApiService
         $crawler->filterXPath('//Messages/Message')->each(function (Crawler $node, $i) use (&$result) {
             try {
                 $item = [
-                    'externalId' => (int)$node->filterXPath('//Id')->text(),
+                    'id' => (int)$node->filterXPath('//Id')->text(),
                     'type' => $node->filterXPath('//Type')->text()
                 ];
 
