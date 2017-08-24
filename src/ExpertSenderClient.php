@@ -82,7 +82,20 @@ class ExpertSenderClient
 
         $apiRequest = $this->createRequest($url, $parameters, $method, $content);
 
-        return $apiRequest->send();
+        try {
+            return $apiRequest->send();
+        } catch (\Exception $e) {
+            $context = [
+                'request' => [
+                    'endpoint' => $url,
+                    'method' => $method,
+                    'parameters' => $parameters,
+                    'content' => $content
+                ]
+            ];
+            $this->logger->log('info', $e->getMessage(), $context);
+        }
+
     }
 
     /**
