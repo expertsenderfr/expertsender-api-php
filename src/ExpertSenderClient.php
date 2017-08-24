@@ -82,8 +82,11 @@ class ExpertSenderClient
 
         $apiRequest = $this->createRequest($url, $parameters, $method, $content);
 
+        /** @var ApiResponse $response */
+        $response = null;
         try {
-            return $apiRequest->send();
+            $response = $apiRequest->send();
+            return $response;
         } catch (\Exception $e) {
             $context = [
                 'request' => [
@@ -91,8 +94,16 @@ class ExpertSenderClient
                     'method' => $method,
                     'parameters' => $parameters,
                     'content' => $content
-                ]
+                ],
+                'response' => null
             ];
+
+            if ($response !== null) {
+                $context['response'] = [
+                    'status' => $response->getStatusCode(),
+                    'body' => $response->__toString(),
+                ];
+            }
             $this->logger->log('info', $e->getMessage(), $context);
         }
 
