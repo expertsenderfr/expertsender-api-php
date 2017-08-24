@@ -83,7 +83,8 @@ class ApiRequest
         }
 
         curl_setopt($handler, CURLOPT_HTTPHEADER, [
-            'Content-Type: text/xml;charset=UTF-8'
+            'Content-Type: text/xml;charset=UTF-8',
+            'Content-Length: '.strlen($this->content)
         ]);
 
         curl_setopt($handler, CURLOPT_FOLLOWLOCATION, true);
