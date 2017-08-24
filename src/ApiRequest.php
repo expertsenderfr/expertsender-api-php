@@ -106,12 +106,15 @@ class ApiRequest
         $body = curl_exec($handler);
 
         if (curl_errno($handler)) {
-            throw new \RuntimeException(curl_error($handler));
+            curl_close($handler);
+            $error = curl_error($handler);
+            throw new \RuntimeException($error);
         }
 
         $response = new ApiResponse($body, curl_getinfo($handler, CURLINFO_HTTP_CODE), $headers);
 
         if ($response->getStatusCode() >= 400) {
+            curl_close($handler);
             throw new \RuntimeException($response->getCrawler()->filterXPath('//Message')->text());
         }
 
