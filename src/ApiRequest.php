@@ -106,8 +106,8 @@ class ApiRequest
         $body = curl_exec($handler);
 
         if (curl_errno($handler)) {
-            curl_close($handler);
             $error = curl_error($handler);
+            curl_close($handler);
             throw new \RuntimeException($error);
         }
 
