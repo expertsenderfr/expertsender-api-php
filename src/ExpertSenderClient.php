@@ -105,6 +105,8 @@ class ExpertSenderClient
                 ];
             }
             $this->logger->log('info', $e->getMessage(), $context);
+
+            throw $e;
         }
 
     }
