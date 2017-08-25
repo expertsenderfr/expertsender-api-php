@@ -32,9 +32,8 @@ class ApiResponse
 
     public function getCrawler()
     {
-        if (!$this->crawler) {
-            $xml = new DOMDocument();
-            $xml->loadXML($this->body);
+        if (!$this->crawler || !($this->crawler instanceof Crawler)) {
+            $xml = $this->loadXml();
 
             $this->crawler = new Crawler();
             $this->crawler->addDocument($xml);
@@ -46,8 +45,7 @@ class ApiResponse
     public function __get($name)
     {
         if (!$this->crawler) {
-            $this->crawler = new DOMDocument();
-            $this->crawler->loadXML($this->body);
+            $this->crawler = $this->loadXml();
         }
 
         return $this->crawler->getElementsByTagName($name);
@@ -60,5 +58,28 @@ class ApiResponse
         }
 
         return $this->body;
+    }
+
+    /**
+     * @return DOMDocument
+     * @throws \Exception
+     */
+    private function loadXml()
+    {
+        try {
+            $xml = new DOMDocument();
+
+            $xml->loadXML($this->body);
+        } catch (\Exception $e) {
+            $exception = new \Exception(
+                implode(';', [
+                    $e->getMessage(),
+                    $this->body
+                ])
+            );
+
+            throw $exception;
+        }
+        return $xml;
     }
 }
