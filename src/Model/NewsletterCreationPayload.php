@@ -216,7 +216,7 @@ class NewsletterCreationPayload
          * @var string   $checkedMethod
          * @var string[] $options
          */
-        $throttlingOptions = ['Manual' => ['throttling_time'], 'TimeOptimized' => 'optimization_period'];
+        $throttlingOptions = ['Manual' => ['throttling_time'], 'TimeOptimized' => ['optimization_period']];
         foreach ($throttlingOptions as $checkedMethod => $options) {
             foreach ($options as $option) {
                 if ($method === $checkedMethod && !isset($opts[$option])) {
