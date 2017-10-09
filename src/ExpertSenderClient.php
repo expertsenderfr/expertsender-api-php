@@ -10,6 +10,7 @@ use ExpertSenderFr\ExpertSenderApi\Services\Server;
 use ExpertSenderFr\ExpertSenderApi\Services\SignalSpamStatistics;
 use ExpertSenderFr\ExpertSenderApi\Services\Subscribers;
 use ExpertSenderFr\ExpertSenderApi\Services\Templates;
+use ExpertSenderFr\ExpertSenderApi\Services\LinkStatistics;
 
 /**
  * Class ExpertSenderClient
@@ -173,5 +174,13 @@ class ExpertSenderClient
     public function lists()
     {
         return new Lists($this, $this->domain);
+    }
+
+    /**
+     * @return LinkStatistics
+     */
+    public function linkStatistics()
+    {
+        return new LinkStatistics($this, $this->domain);
     }
 }
