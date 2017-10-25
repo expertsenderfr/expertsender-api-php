@@ -9,6 +9,7 @@ use ExpertSenderFr\ExpertSenderApi\Services\Segmentations;
 use ExpertSenderFr\ExpertSenderApi\Services\Server;
 use ExpertSenderFr\ExpertSenderApi\Services\SignalSpamStatistics;
 use ExpertSenderFr\ExpertSenderApi\Services\Subscribers;
+use ExpertSenderFr\ExpertSenderApi\Services\SummaryStatistics;
 use ExpertSenderFr\ExpertSenderApi\Services\Templates;
 use ExpertSenderFr\ExpertSenderApi\Services\LinkStatistics;
 
@@ -182,5 +183,13 @@ class ExpertSenderClient
     public function linkStatistics()
     {
         return new LinkStatistics($this, $this->domain);
+    }
+
+    /**
+     * @return SummaryStatistics
+     */
+    public function summaryStatistics()
+    {
+        return new SummaryStatistics($this, $this->domain);
     }
 }
