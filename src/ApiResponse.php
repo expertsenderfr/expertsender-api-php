@@ -3,6 +3,7 @@
 namespace ExpertSenderFr\ExpertSenderApi;
 
 use DOMDocument;
+use ExpertSenderFr\ExpertSenderApi\Exception\XmlParserError;
 use Symfony\Component\DomCrawler\Crawler;
 
 /**
@@ -69,8 +70,14 @@ class ApiResponse
         try {
             $xml = new DOMDocument();
 
-            $xml->loadXML($this->body);
+            if (!@$xml->loadXML($this->body)) {
+                throw XmlParserError::fromString($this->body);
+            }
         } catch (\Exception $e) {
+            if ($e instanceof XmlParserError) {
+                throw $e;
+            }
+
             $exception = new \Exception(
                 implode(';', [
                     $e->getMessage(),
