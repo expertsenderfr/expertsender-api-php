@@ -318,7 +318,7 @@ class NewsletterCreationPayload
         }
 
         if (count($this->tags) > 0) {
-            $result['Tags']['Tag'] = $this->tags;
+            $result['Content']['Tags']['Tag'] = $this->tags;
         }
 
         if (count($this->attachments) > 0) {
