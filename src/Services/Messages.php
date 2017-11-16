@@ -64,24 +64,28 @@ class Messages extends ApiService
         $crawler = $response->getCrawler();
 
         $result = [];
-        $crawler->filterXPath('//Messages/Message')->each(function (Crawler $node, $i) use (&$result) {
-            try {
-                $item = [
-                    'id' => (int)$node->filterXPath('//Id')->text(),
-                    'type' => $node->filterXPath('//Type')->text(),
-                    'subject' => $node->filterXPath('//Subject')->text()
-                ];
+        $messages = $crawler->filterXPath('//Messages/Message');
 
-                if ($item['type'] === 'Newsletter') {
-                    $item['sentDate'] = $node->filterXPath('//SentDate')->text();
+        if ($messages->count() > 0) {
+            $messages->each(function (Crawler $node, $i) use (&$result) {
+                try {
+                    $item = [
+                        'id' => (int)$node->filterXPath('//Id')->text(),
+                        'type' => $node->filterXPath('//Type')->text(),
+                        'subject' => $node->filterXPath('//Subject')->text()
+                    ];
+
+                    if ($item['type'] === 'Newsletter') {
+                        $item['sentDate'] = $node->filterXPath('//SentDate')->text();
+                    }
+                } catch (\Exception $e) {
+                    $this->logger->error($e->getMessage(), ['html' => $node->html()]);
+                    return;
                 }
-            } catch (\Exception $e) {
-                $this->logger->error($e->getMessage(), ['html' => $node->html()]);
-                return;
-            }
 
-            $result[] = $item;
-        });
+                $result[] = $item;
+            });
+        }
 
         return $result;
     }
