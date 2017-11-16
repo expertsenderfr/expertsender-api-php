@@ -75,9 +75,10 @@ class Messages extends ApiService
                         'subject' => $node->filterXPath('//Subject')->text()
                     ];
 
-                    if ($item['type'] === 'Newsletter') {
-                        $item['sentDate'] = $node->filterXPath('//SentDate')->text();
-                    }
+
+                    $sentDate = $node->filterXPath('//SentDate');
+                    $item['sentDate'] = $sentDate->count() > 0 ? $sentDate->text() : null;
+
                 } catch (\Exception $e) {
                     $this->logger->error($e->getMessage(), ['html' => $node->html()]);
                     return;
