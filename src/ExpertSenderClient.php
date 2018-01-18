@@ -6,6 +6,7 @@ use ExpertSenderFr\ExpertSenderApi\Model\Template;
 use ExpertSenderFr\ExpertSenderApi\Services\Lists;
 use ExpertSenderFr\ExpertSenderApi\Services\Messages;
 use ExpertSenderFr\ExpertSenderApi\Services\Segmentations;
+use ExpertSenderFr\ExpertSenderApi\Services\SegmentsCount;
 use ExpertSenderFr\ExpertSenderApi\Services\Server;
 use ExpertSenderFr\ExpertSenderApi\Services\SignalSpamStatistics;
 use ExpertSenderFr\ExpertSenderApi\Services\Subscribers;
@@ -191,5 +192,13 @@ class ExpertSenderClient
     public function summaryStatistics()
     {
         return new SummaryStatistics($this, $this->domain);
+    }
+
+    /**
+     * return SegmentsCount
+     */
+    public function getSegmentsCount()
+    {
+        return new SegmentsCount($this, $this->domain);
     }
 }
