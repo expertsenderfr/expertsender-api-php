@@ -44,9 +44,9 @@ class NewsletterCreationPayload
     private $subscriberList = [];
     private $subscriberSegments = [];
     private $seedLists = [];
+    private $suppressionLists = [];
 
     // Content
-    private $suppressionLists;
     private $subject;
     private $fromName;
     private $fromEmail;
