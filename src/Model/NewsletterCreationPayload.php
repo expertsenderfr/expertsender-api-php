@@ -58,15 +58,15 @@ class NewsletterCreationPayload
     private $googleAnalyticsTags;
     private $header;
     private $footer;
-    private $tags;
-    private $attachments;
+    private $tags = [];
+    private $attachments = [];
 
     // Delivery Settings
-    private $urlIntegrations;
+    private $urlIntegrations = [];
     private $deliveryDate;
     private $overrideDeliveryCap;
     private $throttling;
-    private $channels;
+    private $channels = [];
 
     public function __construct($subject, $fromName, $fromEmail)
     {
